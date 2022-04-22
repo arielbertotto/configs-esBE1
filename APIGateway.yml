@@ -23,18 +23,6 @@ spring:
             - Path=/catalog/**
       default-filters:
         - OIDCTokenRelay
-  security:
-    oauth2:
-      client:
-        provider:
-          google:
-            issuer-uri: https://accounts.google.com
-        registration:
-          google:
-            client-id: 258182736623-62s00juj38h7saast9hfnrqdv1m4bse5.apps.googleusercontent.com
-            client-secret: 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
-            scope: openid,profile,email
-            redirect-uri: http://localhost:8080/login/oauth2/code/google
 
 eureka:
   client:
