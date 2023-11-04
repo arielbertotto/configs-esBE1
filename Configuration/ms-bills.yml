@@ -18,8 +18,8 @@ spring:
     #password: ${DB_PASS:${{ secrets.DB_PASS }}}
     
     #url: ${DB_URL:${{ secrets.DB_URL }}}:${DB_PORT:${{ secrets.DB_PORT }}}/${DB_SERVICE:${{ secrets.DB_SERVICE }}}
-    
-    url: db.ctd.academy:3306/pi21023c01_GRUPO1
+
+    url: db.ctd.academy:3306/pi21023c01_GRUPO1?useUnicode=true&characterEncoding=utf8&createDatabaseIfNotExist=true
     username: pi21023c01_GRUPO1
     password: johr9Aeb
 
