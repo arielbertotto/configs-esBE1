@@ -14,9 +14,9 @@ spring:
     driverClassName: ${DB_DRIVER:com.mysql.cj.jdbc.Driver}
     #url: ${{ secrets.DB_URL }}:${{ secrets.DB_PORT }}/${{ secrets.DB_SERVICE }}?useUnicode=true\
   #&characterEncoding=utf8&createDatabaseIfNotExist=true
-    url: ${{ secrets.DB_URL }}:${{ secrets.DB_PORT }}/${{ secrets.DB_SERVICE }}
-    username: ${{ secrets.DB_USER }}
-    password: ${{ secrets.DB_PASS }}
+    url: ${DB_URL:${{ secrets.DB_URL }}}:${DB_PORT:${{ secrets.DB_PORT }}}/${DB_SERVICE:${{ secrets.DB_SERVICE }}}
+    username: ${DB_USER:${{ secrets.DB_USER }}}
+    password: ${DB_PASS:${{ secrets.DB_PASS }}}
     jpa:
       hibernate:
         ddl-auto: update
