@@ -4,8 +4,8 @@ server:
 spring:
   application:
     name: ms-bills
-  profiles:
-    active: ${PROFILE:default}
+  #profiles:
+  #  active: ${PROFILE:default}
   #  ------ cloud parameters to exclude if local test is needed ------
   #  cloud:
   #    config:
@@ -14,7 +14,7 @@ spring:
     driverClassName: ${DB_DRIVER:com.mysql.cj.jdbc.Driver}
     #url: ${{ secrets.DB_URL }}:${{ secrets.DB_PORT }}/${{ secrets.DB_SERVICE }}?useUnicode=true\
   #&characterEncoding=utf8&createDatabaseIfNotExist=true
-    url: ${{ secrets.DB_URL }}: ${{ secrets.DB_PORT }}/ ${{ secrets.DB_SERVICE }}
+    url: ${{ secrets.DB_URL }}:${{ secrets.DB_PORT }}/${{ secrets.DB_SERVICE }}
     username: ${{ secrets.DB_USER }}
     password: ${{ secrets.DB_PASS }}
     jpa:
