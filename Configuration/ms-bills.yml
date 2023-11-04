@@ -1,0 +1,38 @@
+server:
+  port: ${port:0}
+
+spring:
+  application:
+    name: ms-bills
+  profiles:
+    active: ${PROFILE:default}
+  #  ------ cloud parameters to exclude if local test is needed ------
+  #  cloud:
+  #    config:
+  #      enabled: false
+  datasource:
+    driverClassName: ${DB_DRIVER:com.mysql.cj.jdbc.Driver}
+    #url: ${{ secrets.DB_URL }}:${{ secrets.DB_PORT }}/${{ secrets.DB_SERVICE }}?useUnicode=true\
+  #&characterEncoding=utf8&createDatabaseIfNotExist=true
+    url: ${{ secrets.DB_URL }}: ${{ secrets.DB_PORT }}/ ${{ secrets.DB_SERVICE }}
+    username: ${{ secrets.DB_USER }}
+    password: ${{ secrets.DB_PASS }}
+    jpa:
+      hibernate:
+        ddl-auto: update
+      open-in-view: false
+      show-sql: true
+      properties:
+        hibernate:
+          dialect: ${DB_DIALECT:org.hibernate.dialect.MySQL8Dialect}
+          format_sql: true
+      defer-datasource-initialization: true
+
+message: hello from facturacion-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#
